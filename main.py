@@ -42,5 +42,8 @@ async def eventLoop(ticker = "BTC-USD"):
                 ob.processMessage(order)
 
 if __name__ == "__main__":
-    asyncio.run(eventLoop())
+    try:
+        asyncio.run(eventLoop())
+    except:
+        print("Exiting Orderbook")
         
