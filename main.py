@@ -11,7 +11,7 @@ socketURL = 'wss://ws-feed.exchange.coinbase.com'
 ob = OrderBook()
 mp = MessageParser()
 
-# main event loop to subscript to the websocks and recieve messages
+# main event loop to subscribe to the websocks and recieve messages
 async def eventLoop(ticker = "BTC-USD"):
     async with websockets.connect(socketURL) as websocket:
         subscriptionMessage = json.dumps(
@@ -42,8 +42,5 @@ async def eventLoop(ticker = "BTC-USD"):
                 ob.processMessage(order)
 
 if __name__ == "__main__":
-    try:
-        asyncio.run(eventLoop())
-    except:
-        print("Stopping orderbook")
+    asyncio.run(eventLoop())
         

@@ -192,7 +192,14 @@ class OrderBook:
             limit = side[price]
             order = self.orderBook[iden]
             
+            # guard against case where a limit with a single order was previously
+            # removed by a match
+            if limit.head == None or limit.tail == None:
+                del self.orderBook[order.id]
+                return
+
             # adjust the head and tail pointers of the limit if necessary
+
             if limit.head.id == order.id and limit.tail.id == order.id:
                 limit.head = None
                 limit.tail = None
