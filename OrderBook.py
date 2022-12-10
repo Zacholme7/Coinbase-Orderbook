@@ -8,8 +8,8 @@ Processes orders of type:
     change: a resting order has changed in size of price
 
 Structure:
-    An orderbook object is meant to track state and process incomming messages
-    it contains 3 dictionaries: 1 to track active orders, 1 to track the buy side,
+    An orderbook object is meant to track state and process incoming messages.
+    It contains 3 dictionaries: 1 to track active orders, 1 to track the buy side,
     and 1 to track the sell side. The buy and sell side are set up identically. The
     price of a limit will be used as a key and a limit object will be stored as the value.
     Within the limit object, there is a linked list of orders which is used to facilitate 
@@ -199,7 +199,6 @@ class OrderBook:
                 return
 
             # adjust the head and tail pointers of the limit if necessary
-
             if limit.head.id == order.id and limit.tail.id == order.id:
                 limit.head = None
                 limit.tail = None
