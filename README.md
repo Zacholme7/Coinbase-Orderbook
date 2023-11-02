@@ -19,10 +19,11 @@ Before you begin, ensure you have met the following requirements:
 - `asyncio` for asynchronous event handling.
 - `json` for JSON manipulation.
 
-## Installation
-To install the Real-Time Order Book, follow these steps:
-git clone https://github.com/your-github-username/order-book.git
-cd order-book
+### Installation
+Clone this repository and install the necessary Python packages:
+```shell
+git clone https://github.com/yourusername/orderbook.git
+cd orderbook
 pip install websockets asyncio
 
 ## Usage
